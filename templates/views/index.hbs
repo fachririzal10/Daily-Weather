@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {{>headerLinks}}
+</head>
+<body>
+
+    {{>navbar}}
+
+    <!-- Bagian header utama -->
+    <div class="container-fluid main_header">
+        <div class="row">
+            <div class="col-md-10 col-12 mx-auto">
+                <div class="row">
+                    <!-- Bagian kiri -->
+                    <div class="col-md-6 col-12 main_header_left">
+                        <p>Selamat Datang di Aplikasi Cuaca</p>
+                        <h1>Dapatkan info <span class="text_clr">Cuaca</span> Terbaru di kotamu</h1>
+                        <a href="/weather"><button>cek sekarang</button></a>
+                    </div>
+                    <!-- Bagian kanan -->
+                    <div class="col-md-6 col-12 main_header_right">
+                        <!-- Carousel untuk gambar latar belakang -->
+                        <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+                            <div class="carousel-inner">
+                                <div class="carousel-item active">
+                                    <img src="images/bg1.png" class=" w-100" alt="Gambar pertama">
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="images/bg2.png" class=" w-100" alt="Gambar kedua">
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="images/bg3.png" class=" w-100" alt="Gambar ketiga">
+                                </div>
+                            </div>
+                            <!-- Tombol navigasi carousel -->
+                            <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Sebelumnya</span>
+                            </a>
+                            <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="sr-only">Berikutnya</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bagian footer -->
+    {{>footer}}
+
+</body>
+</html>
+
+

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {{>headerLinks}}
+</head>
+<body>
+
+    {{>navbar}}
+
+    <!-- Bagian header utama -->
+    <div class="container-fluid main_header">
+        <div class="row">
+            <div class="col-md-10 col-12 mx-auto">
+                <div class="row">
+                    <!-- Bagian kiri (left side) -->
+                    <div class="col-md-12 col-12 main_header_kiri align-items-center">
+                        <!-- Gambar kesalahan (error image) -->
+                        <figure class="errimg">
+                            <img src="images/404.png" alt="Fachri" class="img-fluid" title="Aplikasi Cuaca Fachri">
+                        </figure>
+                        <!-- Pesan selamat datang dan pesan kesalahan -->
+                        <p>Selamat Datang di Aplikasi Cuaca</p>
+                        <h1>{{errorMsg}}</h1>
+                        <!-- Tombol untuk kembali -->
+                        <a href="/"><button>Kembali</button></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bagian footer -->
+    {{>footer}}
+
+</body>
+</html>
+
+

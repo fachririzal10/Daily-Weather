@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {{>headerLinks}}
+    <!-- Atur judul dan metadata lainnya di sini -->
+
+</head>
+<body>
+
+    {{>navbar}}
+
+    <!-- Bagian header utama -->
+    <div class="container-fluid main_header">
+        <div class="row">
+            <div class="col-md-10 col-12 mx-auto">
+                <div class="main_content">
+                    <!-- Form pencarian cuaca -->
+                    <form class="temp_form">
+                        <input type="text" id="cityName" placeholder="Masukkan nama kota" autocomplete="off">
+                        <input type="submit" value="Cari" id="submitBtn">
+                    </form>
+
+                    <!-- Informasi cuaca -->
+                    <div class="tempInformation">
+                        <div class="top_layer">
+                            <p id="day">Selasa</p>
+                            <p id="today_date">2 JAN</p>
+                        </div>
+                        <div class="main_layer ">
+                            <p id="city_name">Dapatkan Output Disini</p>
+                            <div class="middle_layer data_hide">
+                                <p id="temp"><span id="temp_real_val">0</span><sup>o</sup>C</p>
+                                <p id="temp_status"> <i class="fa fa-cloud" aria-hidden="true"></i></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Bagian footer -->
+    {{>footer}}
+
+    <!-- Sertakan skrip JavaScript -->
+    <script src="js/main.js"></script>
+    
+    <script>
+        // Fungsi untuk mendapatkan nama hari ini
+        const dapatkanHariIni = () => {
+            let hari = ["Minggu", "Senin", "Selasa", "Rabu", "Kamis", "Jumat", "Sabtu"];
+            let waktuSekarang = new Date();
+            let hariIni = hari[waktuSekarang.getDay()];
+            let hariElement = document.getElementById('day');
+            hariElement.innerText = hariIni;
+        };
+
+        // Fungsi untuk mendapatkan tanggal dan bulan saat ini
+        const dapatkanBulanSekarang = () => {
+            let bulan = ["Jan", "Feb", "Mar", "Apr", "Mei", "Jun", "Jul", "Ags", "Sep", "Okt", "Nov", "Des"];
+            let sekarang = new Date();
+            let namaBulan = bulan[sekarang.getMonth()];
+            let tanggal = sekarang.getDate();
+            let tanggalHariIni = document.getElementById('today_date');
+            let hariIni = `${tanggal} ${namaBulan}`;
+            tanggalHariIni.innerText = hariIni;
+        };
+
+        // Panggil fungsi-fungsi di atas
+        dapatkanHariIni(); 
+        dapatkanBulanSekarang();
+    </script>
+
+</body>
+</html>
+
+
